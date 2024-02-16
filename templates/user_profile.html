@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block title %} {% endblock %}
+
+    {% block body %}
+        <h1> {{ user.email }}</h1>
+        <ul>
+            {% for rating in user.ratings %}
+            <li>
+                {{ rating.movie.title }}:
+                <span> {{ rating.score }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+
+</body>
+</html>
